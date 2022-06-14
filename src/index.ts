@@ -3,8 +3,14 @@
 import minimist from "minimist";
 import path from "path";
 import { Plop, run } from "plop";
+import { displayHelpScreen } from "./utils/log";
 const args = process.argv.slice(2);
 const argv = minimist(args);
+
+if (argv.help || argv.h) {
+  displayHelpScreen(); // 输出帮助文档
+  process.exit(0);
+}
 
 Plop.launch(
   {

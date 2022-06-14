@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const path_1 = require("path");
-const util_1 = require("../util");
+const utils_1 = require("../utils");
 function default_1(plop) {
     plop.setGenerator("openapi", {
         description: "根据swagger openapi3 生成 server",
@@ -20,7 +20,7 @@ function default_1(plop) {
     function openapiGenerator(_config) {
         console.log("~~~ _config", _config);
         const { generateService } = require("openapi3-ts-generator");
-        const fecgConfig = require((0, path_1.resolve)((0, util_1.cwdPath)("fecg.config")));
+        const fecgConfig = require((0, path_1.resolve)((0, utils_1.cwdPath)("fecg.config")));
         if (!fecgConfig.openapi) {
             console.log("请在fecg.config.js中配置openapi");
             return;

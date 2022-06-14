@@ -13,7 +13,7 @@
     "clean": "rimraf dist/*",
     "prestart": "npm run clean",
     "prebuild": "npm run clean",
-    "copyTpl": "rimraf dist/templates/* && cp -r src/templates/* dist/templates",
+    "copyTpl": "cp -r src/templates/ dist/templates",
     "poststart": "npm run copyTpl && chmod 777 ./dist/index.js && tsc -w",
     "postbuild": "npm run copyTpl && chmod 777 ./dist/index.js"
   },
