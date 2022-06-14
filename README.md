@@ -1,4 +1,4 @@
-<h1 align="center">feco 🚀</h1>
+<h1 align="center">fecg 🚀</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.3-blue.svg"/>
   <img src="https://img.shields.io/badge/node-%3E%3D12.20-blue.svg" />
