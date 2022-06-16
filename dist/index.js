@@ -12,12 +12,13 @@ if (argv.help || argv.h) {
     (0, log_1.displayHelpScreen)(); // 输出帮助文档
     process.exit(0);
 }
+console.log('~~~ argv.cwd', argv.cwd);
 plop_1.Plop.launch({
     cwd: argv.cwd,
-    // In order for `plop` to always pick up the `plopfile.js` despite the CWD, you must use `__dirname`
     configPath: path_1.default.join(__dirname, "plopfile.js"),
     require: argv.require,
     completion: argv.completion,
-    // This will merge the `plop` argv and the generator argv.
-    // This means that you don't need to use `--` anymore
-}, plop_1.run);
+}, (env) => {
+    const options = Object.assign({}, env);
+    return (0, plop_1.run)(options, undefined, true);
+});

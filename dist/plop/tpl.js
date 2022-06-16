@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+// plop 模板
 const path_1 = require("path");
 const utils_1 = require("../utils");
 function default_1(plop) {
-    // component generator
-    plop.setGenerator("form", {
-        description: "表单页面",
+    plop.setGenerator("table2", {
+        description: "基础表格",
         prompts: [
             {
                 type: "input",
@@ -17,7 +17,7 @@ function default_1(plop) {
             {
                 type: "add",
                 path: `${(0, path_1.resolve)((0, utils_1.cwdPath)("{{name}}/index.tsx"))}`,
-                templateFile: "../templates/form/index.hbs",
+                templateFile: "templates/table/index.hbs",
             },
         ],
     });

@@ -6,6 +6,7 @@
     "dist"
   ],
   "scripts": {
+    "dev": "npm-run-all --parallel start watch",
     "start": "tsc",
     "build": "tsc",
     "fe": "./dist/index.js",
@@ -17,6 +18,7 @@
     "poststart": "npm run copyTpl && chmod 777 ./dist/index.js && tsc -w",
     "postbuild": "npm run copyTpl && chmod 777 ./dist/index.js"
   },
+  "preferGlobal": true,
   "bin": {
     "fe": "./dist/index.js"
   },

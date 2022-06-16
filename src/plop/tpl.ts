@@ -1,11 +1,11 @@
+// plop 模板
 import { resolve } from "path";
 import { NodePlopAPI } from "plop";
 import { cwdPath } from "../utils";
 
 export default function (plop: NodePlopAPI) {
-  // component generator
-  plop.setGenerator("form", {
-    description: "表单页面",
+  plop.setGenerator("table2", {
+    description: "基础表格",
     prompts: [
       {
         type: "input",
@@ -17,7 +17,7 @@ export default function (plop: NodePlopAPI) {
       {
         type: "add",
         path: `${resolve(cwdPath("{{name}}/index.tsx"))}`,
-        templateFile: "../templates/form/index.hbs",
+        templateFile: "templates/table/index.hbs",
       },
     ],
   });

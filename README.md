@@ -52,7 +52,8 @@ module.exports = {
 ├── src // 公用组件
 │   ├── templates // 模板文件
 │   │   ├── form
-│   │   └── table
+│   │   ├── table
+│   │   └── data.json // plop 模板映射列表
 │   ├── plop // plop 控制器
 │   │   ├── form.ts
 │   │   └── table.ts
@@ -66,9 +67,7 @@ module.exports = {
 
 ```sh
 # 启动项目
-npm run start
-# 新开一个控制台，启动监听
-npm run watch // 监听src/templates文件，如果发生改变，同步代码至dist/templates
+npm run dev
 # 测试指令
 npm run fe
 # 构建打包
