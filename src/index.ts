@@ -11,7 +11,7 @@ if (argv.help || argv.h) {
   displayHelpScreen(); // 输出帮助文档
   process.exit(0);
 }
-console.log('~~~ argv.cwd', argv.cwd)
+
 Plop.launch(
   {
     cwd: argv.cwd,

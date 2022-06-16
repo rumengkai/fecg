@@ -12,7 +12,6 @@ if (argv.help || argv.h) {
     (0, log_1.displayHelpScreen)(); // 输出帮助文档
     process.exit(0);
 }
-console.log('~~~ argv.cwd', argv.cwd);
 plop_1.Plop.launch({
     cwd: argv.cwd,
     configPath: path_1.default.join(__dirname, "plopfile.js"),
