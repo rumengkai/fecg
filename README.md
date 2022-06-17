@@ -7,11 +7,13 @@
   </a>
 </p>
 
+![](public/use_demo.gif)
+
 > Front end code generator
 
-## 用法
+## 代码生成器
 
-直接全局安装 [@jd/fecg](http://npm.m.jd.com/package/@jd/fecg)
+直接全局安装 [fecg](https://www.npmjs.com/package/fecg)
 
 ```sh
 npm install fecg -g
@@ -26,6 +28,10 @@ npm install @jd/fecg -g --registry=http://registry.m.jd.com
 ```
 fe -h
 ```
+
+## 配合 vscode 插件使用：[fecg-vscode](https://marketplace.visualstudio.com/items?itemName=rumengkai.fecg)
+
+![](public/use_demo_vscode.gif)
 
 ### 配置文件，
 
