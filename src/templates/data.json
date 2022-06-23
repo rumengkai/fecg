@@ -1,9 +1,26 @@
 [
   {
     "name": "table",
-    "description": "基础table列表页面",
+    "description": "table列表",
     "templateFiles": [
       "templates/table/index.hbs"
+    ],
+    "children": [
+      {
+        "name": "base-table",
+        "description": "基础table页面",
+        "templateFiles": [
+          "templates/table/base-table/index.hbs"
+        ]
+      },
+      {
+        "name": "action-table",
+        "description": "action table页面",
+        "templateFiles": [
+          "templates/table/action-table/index.hbs",
+          "templates/table/action-table/index.less"
+        ]
+      }
     ]
   },
   {
