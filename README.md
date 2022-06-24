@@ -9,7 +9,7 @@
 
 ![](public/use_demo.gif)
 
-### 使用文档： [FECG](https://temp-static-domain.jd.com/data-vis-ui)
+### 使用文档： [FECG](https://temp-static-domain.jd.com/fecg-docs)
 
 ## 代码生成器：Front end code generator
 
