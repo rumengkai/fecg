@@ -4,6 +4,9 @@ export declare type PlopList = PlopItem[];
 export declare type PlopItem = {
     name?: string;
     description?: string;
+    isGeneral: boolean;
     templateFiles?: string[];
     children?: PlopItem[];
+    isFolder?: string;
+    suffix?: string;
 };

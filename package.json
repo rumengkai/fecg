@@ -1,6 +1,6 @@
 {
   "name": "fecg",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Front end code generator",
   "homepage": "https://github.com/rumengkai/fecg",
   "files": [

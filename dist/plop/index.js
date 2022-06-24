@@ -10,7 +10,8 @@ const argv = (0, minimist_1.default)(args);
 // 根据配置文件中的 plopList 生成 plop Generator
 function default_1(plop) {
     plop.setPrompt("autocomplete", inquirer_autocomplete_prompt_1.default);
-    plopList.map((e) => {
+    const generalPlopList = plopList.filter((e) => e.isGeneral);
+    generalPlopList.map((e) => {
         let prompts = [];
         // 如果有 children,则需要选择对应的 children
         if (e.children && e.children.length) {
@@ -25,17 +26,29 @@ function default_1(plop) {
                 },
             });
         }
-        prompts.push({ type: "input", name: "name", message: "请输入名称：", default: "fe-component" });
+        prompts.push({ type: "input", name: "name", message: "请输入名称：", default: "fe-" + e.name });
         // 如果检测到命令中有dir参数，则加入文件路径参数
         if (argv.dir || argv.d) {
             prompts.push({ type: "input", name: argv.dir ? "dir" : "d", message: "请输入路径：" });
         }
         const actionsFun = (item, prefix) => {
             return item.templateFiles.map((file) => {
-                const path = file.replace(`templates/${prefix}/`, "").replace(".hbs", ".tsx").split("/");
+                const path = file
+                    .replace(`templates/${prefix}/`, "")
+                    .replace(".hbs", item.suffix || ".tsx")
+                    .split("/");
+                let fileName = path.join("/");
+                let resPath = "";
+                // 如果产物没有文件夹，则替换模板文件名为参数 name 的值
+                if (item.isFolder === false) {
+                    resPath = (0, utils_1.cwdPath)(argv.dir || argv.d || "", "{{name}}." + fileName.split(".").pop());
+                }
+                else {
+                    resPath = (0, utils_1.cwdPath)(argv.dir || argv.d || "", "{{name}}", fileName);
+                }
                 return {
                     type: "add",
-                    path: (0, utils_1.cwdPath)(argv.dir || argv.d || "", "{{name}}", path.join("/")),
+                    path: resPath,
                     templateFile: file,
                 };
             });

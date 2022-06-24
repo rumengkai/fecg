@@ -11,7 +11,8 @@ const argv = minimist(args);
 // 根据配置文件中的 plopList 生成 plop Generator
 export default function (plop: NodePlopAPI) {
   plop.setPrompt("autocomplete", autocompletePrompt);
-  plopList.map((e) => {
+  const generalPlopList = plopList.filter((e) => e.isGeneral);
+  generalPlopList.map((e) => {
     let prompts = [];
     // 如果有 children,则需要选择对应的 children
     if (e.children && e.children.length) {
@@ -26,7 +27,7 @@ export default function (plop: NodePlopAPI) {
         },
       });
     }
-    prompts.push({ type: "input", name: "name", message: "请输入名称：", default: "fe-component" });
+    prompts.push({ type: "input", name: "name", message: "请输入名称：", default: "fe-" + e.name });
     // 如果检测到命令中有dir参数，则加入文件路径参数
     if (argv.dir || argv.d) {
       prompts.push({ type: "input", name: argv.dir ? "dir" : "d", message: "请输入路径：" });
@@ -34,10 +35,21 @@ export default function (plop: NodePlopAPI) {
 
     const actionsFun = (item, prefix) => {
       return item.templateFiles.map((file) => {
-        const path = file.replace(`templates/${prefix}/`, "").replace(".hbs", ".tsx").split("/");
+        const path = file
+          .replace(`templates/${prefix}/`, "")
+          .replace(".hbs", item.suffix || ".tsx")
+          .split("/");
+        let fileName = path.join("/");
+        let resPath = "";
+        // 如果产物没有文件夹，则替换模板文件名为参数 name 的值
+        if (item.isFolder === false) {
+          resPath = cwdPath(argv.dir || argv.d || "", "{{name}}." + fileName.split(".").pop());
+        } else {
+          resPath = cwdPath(argv.dir || argv.d || "", "{{name}}", fileName);
+        }
         return {
           type: "add",
-          path: cwdPath(argv.dir || argv.d || "", "{{name}}", path.join("/")),
+          path: resPath,
           templateFile: file,
         };
       });
@@ -62,6 +74,9 @@ export type PlopList = PlopItem[];
 export type PlopItem = {
   name?: string;
   description?: string;
+  isGeneral: boolean; // 是否是常规plop，plop/index.ts 只处理常规plop
   templateFiles?: string[]; // 模板文件，数组形式，可以写多个文件。
   children?: PlopItem[];
+  isFolder?: string; // 产物是否是需要放入文件夹，默认 true
+  suffix?: string; // 生成文件的后缀，默认是 .tsx
 };

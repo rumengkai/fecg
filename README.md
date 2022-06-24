@@ -1,6 +1,6 @@
 <h1 align="center">fecg 🚀</h1>
 <p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.3-blue.svg"/>
+  <img alt="Version" src="https://img.shields.io/badge/version-0.0.10-blue.svg"/>
   <img src="https://img.shields.io/badge/node-%3E%3D12.20-blue.svg" />
   <a href="#" target="_blank">
     <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
@@ -9,11 +9,11 @@
 
 ![](public/use_demo.gif)
 
-> Front end code generator
+### 使用文档： [FECG](https://temp-static-domain.jd.com/data-vis-ui)
 
-## 代码生成器
+## 代码生成器：Front end code generator
 
-直接全局安装 [fecg](https://www.npmjs.com/package/fecg)
+全局安装 [fecg](https://www.npmjs.com/package/fecg)
 
 ```sh
 npm install fecg -g
@@ -26,20 +26,43 @@ npm install @jd/fecg -g --registry=http://registry.m.jd.com
 ```
 
 ```
-fe -h
+$ fe -h
+
+Usage:
+  $ fe                 Select from a list of available generators
+  $ fe <name>          Run a generator registered under that name
+  $ fe <name> [input]  Run the generator with input data to bypass prompts
+
+Options:
+  -h, --help             Show this help display
+  -t, --show-type-names  Show type names instead of abbreviations
+  -i, --init             Generate a basic plopfile.js
+  -v, --version          Print current version
+  -f, --force            Run the generator forcefully
+  -d, --dir              Enter folder path
+
+ ------------------------------------------------------
+
+
+Examples:
+  $ fe
+  $ fe table
+  $ fe table base-table
+  $ fe table base-table userList --dir src/pages
 ```
 
 ## 配合 vscode 插件使用：[fecg-vscode](https://marketplace.visualstudio.com/items?itemName=rumengkai.fecg)
 
+![](public/fecg-vscode.png)
+
 ![](public/use_demo_vscode.gif)
 
 ### 配置文件，
-
+## 如果要使用 openapi 功能，需要在项目中增加配置文件：fecg.config.js
 > fecg.config.js
 
 ```js
 module.exports = {
-  // 如果要使用openapi功能，需要配置openapi信息
   openapi: {
     schemaPath: "https://gw.alipayobjects.com/os/antfincdn/M%24jrzTTYJN/oneapi.json", // schema 地址
     requestLibPath: "import request from '@/utils/request';", // 请求头设置

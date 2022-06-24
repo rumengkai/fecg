@@ -1,0 +1,10 @@
+import request from 'utils/request';
+import { {{pascalCase name}}Response } from './type';
+
+export const {{camelCase name}} = async (param: { id: string }) => {
+  return request<{{pascalCase name}}Response>({
+    url: '/api/{{kebabCase name}}',
+    method: 'POST',
+    data: param,
+  });
+};
