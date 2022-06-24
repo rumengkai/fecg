@@ -15,6 +15,6 @@ export const mkdir = (dir: string) => {
   }
 };
 
-export const cwdPath = (name?: string) => {
-  return resolve(process.cwd(), name);
+export const cwdPath = (...args) => {
+  return resolve(process.cwd(), ...args);
 };

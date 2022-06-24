@@ -5,7 +5,7 @@ import { cwdPath } from "../utils";
 function openapiGenerator(_config) {
   console.log("~~~ _config", _config);
   const { generateService } = require("openapi3-ts-generator");
-  const fecgConfig = require(resolve(cwdPath("fecg.config")));
+  const fecgConfig = require(cwdPath("fecg.config"));
   if (!fecgConfig.openapi) {
     console.log("请添加配置文件 fecg.config.js 并配置 openapi 相关信息");
     return;

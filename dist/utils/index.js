@@ -18,7 +18,7 @@ const mkdir = (dir) => {
     }
 };
 exports.mkdir = mkdir;
-const cwdPath = (name) => {
-    return (0, path_1.resolve)(process.cwd(), name);
+const cwdPath = (...args) => {
+    return (0, path_1.resolve)(process.cwd(), ...args);
 };
 exports.cwdPath = cwdPath;

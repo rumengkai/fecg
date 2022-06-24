@@ -2,9 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const tslib_1 = require("tslib");
 const inquirer_autocomplete_prompt_1 = tslib_1.__importDefault(require("inquirer-autocomplete-prompt"));
-const path_1 = require("path");
+const minimist_1 = tslib_1.__importDefault(require("minimist"));
 const utils_1 = require("../utils");
 const plopList = require("../templates/data.json");
+const args = process.argv.slice(2);
+const argv = (0, minimist_1.default)(args);
 // 根据配置文件中的 plopList 生成 plop Generator
 function default_1(plop) {
     plop.setPrompt("autocomplete", inquirer_autocomplete_prompt_1.default);
@@ -23,13 +25,17 @@ function default_1(plop) {
                 },
             });
         }
-        prompts.push({ type: "input", name: "name", message: "请输入名称：" });
-        const actions = (item, prefix) => {
+        prompts.push({ type: "input", name: "name", message: "请输入名称：", default: "fe-component" });
+        // 如果检测到命令中有dir参数，则加入文件路径参数
+        if (argv.dir || argv.d) {
+            prompts.push({ type: "input", name: argv.dir ? "dir" : "d", message: "请输入路径：" });
+        }
+        const actionsFun = (item, prefix) => {
             return item.templateFiles.map((file) => {
                 const path = file.replace(`templates/${prefix}/`, "").replace(".hbs", ".tsx").split("/");
                 return {
                     type: "add",
-                    path: `${(0, path_1.resolve)((0, utils_1.cwdPath)("{{name}}/" + path.join("/")))}`,
+                    path: (0, utils_1.cwdPath)(argv.dir || argv.d || "", "{{name}}", path.join("/")),
                     templateFile: file,
                 };
             });
@@ -41,9 +47,9 @@ function default_1(plop) {
                 if (data.tplName) {
                     let tpl_name = data.tplName.split(":")[0];
                     let item = e.children.find((e) => e.name === tpl_name);
-                    return actions(item, e.name + "/" + tpl_name);
+                    return actionsFun(item, e.name + "/" + tpl_name);
                 }
-                return actions(e, e.name);
+                return actionsFun(e, e.name);
             },
         });
     });

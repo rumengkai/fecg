@@ -1,9 +1,12 @@
 import autocompletePrompt from "inquirer-autocomplete-prompt";
-import { resolve } from "path";
+import minimist from "minimist";
 import { NodePlopAPI } from "plop";
 import { cwdPath } from "../utils";
 
 const plopList: PlopList = require("../templates/data.json");
+
+const args = process.argv.slice(2);
+const argv = minimist(args);
 
 // 根据配置文件中的 plopList 生成 plop Generator
 export default function (plop: NodePlopAPI) {
@@ -23,13 +26,18 @@ export default function (plop: NodePlopAPI) {
         },
       });
     }
-    prompts.push({ type: "input", name: "name", message: "请输入名称：" });
-    const actions = (item, prefix) => {
+    prompts.push({ type: "input", name: "name", message: "请输入名称：", default: "fe-component" });
+    // 如果检测到命令中有dir参数，则加入文件路径参数
+    if (argv.dir || argv.d) {
+      prompts.push({ type: "input", name: argv.dir ? "dir" : "d", message: "请输入路径：" });
+    }
+
+    const actionsFun = (item, prefix) => {
       return item.templateFiles.map((file) => {
         const path = file.replace(`templates/${prefix}/`, "").replace(".hbs", ".tsx").split("/");
         return {
           type: "add",
-          path: `${resolve(cwdPath("{{name}}/" + path.join("/")))}`,
+          path: cwdPath(argv.dir || argv.d || "", "{{name}}", path.join("/")),
           templateFile: file,
         };
       });
@@ -41,9 +49,9 @@ export default function (plop: NodePlopAPI) {
         if (data.tplName) {
           let tpl_name = data.tplName.split(":")[0];
           let item = e.children.find((e) => e.name === tpl_name);
-          return actions(item, e.name + "/" + tpl_name);
+          return actionsFun(item, e.name + "/" + tpl_name);
         }
-        return actions(e, e.name);
+        return actionsFun(e, e.name);
       },
     });
   });

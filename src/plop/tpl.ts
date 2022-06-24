@@ -16,7 +16,7 @@ export default function (plop: NodePlopAPI) {
     actions: [
       {
         type: "add",
-        path: `${resolve(cwdPath("{{name}}/index.tsx"))}`,
+        path: cwdPath("{{name}}/index.tsx"),
         templateFile: "templates/table/index.hbs",
       },
     ],
