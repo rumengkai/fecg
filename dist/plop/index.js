@@ -32,9 +32,7 @@ function default_1(plop) {
             prompts.push({ type: "input", name: argv.dir ? "dir" : "d", message: "请输入路径：" });
         }
         const actionsFun = (item, prefix) => {
-            console.log('~~~ prefix', prefix);
             return item.templateFiles.map((file) => {
-                console.log('~~~ file', file);
                 const path = file
                     .replace(`templates/${prefix}/`, "")
                     .replace(".hbs", item.suffix || ".tsx")
