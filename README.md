@@ -22,8 +22,8 @@ npm install fecg -g
 
 ```bash
 $ fe
-❯ table - table列表 
-  form - 基础form表单页面 
+❯ list - 列表页面 
+  form - 表单页面 
   page - 空白页面 
   api - 生成 api 文件 
   mock - 生成单个 mock 文件 
