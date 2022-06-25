@@ -34,7 +34,9 @@ export default function (plop: NodePlopAPI) {
     }
 
     const actionsFun = (item, prefix) => {
+      console.log('~~~ prefix', prefix)
       return item.templateFiles.map((file) => {
+        console.log('~~~ file', file)
         const path = file
           .replace(`templates/${prefix}/`, "")
           .replace(".hbs", item.suffix || ".tsx")

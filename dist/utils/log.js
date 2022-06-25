@@ -24,9 +24,9 @@ function displayHelpScreen() {
         "",
         chalk_1.default.bold("Examples:"),
         "  $ " + chalk_1.default.blue("fe"),
-        "  $ " + chalk_1.default.blue("fe table"),
-        "  $ " + chalk_1.default.blue("fe table base-table"),
-        "  $ " + chalk_1.default.blue("fe table base-table userList --dir src/pages"),
+        "  $ " + chalk_1.default.blue("fe list"),
+        "  $ " + chalk_1.default.blue("fe list basic-table"),
+        "  $ " + chalk_1.default.blue("fe list basic-table userList --dir src/pages"),
         "",
     ].join("\n"));
 }

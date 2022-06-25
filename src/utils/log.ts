@@ -22,9 +22,9 @@ export function displayHelpScreen() {
       "",
       chalk.bold("Examples:"),
       "  $ " + chalk.blue("fe"),
-      "  $ " + chalk.blue("fe table"),
-      "  $ " + chalk.blue("fe table base-table"),
-      "  $ " + chalk.blue("fe table base-table userList --dir src/pages"),
+      "  $ " + chalk.blue("fe list"),
+      "  $ " + chalk.blue("fe list basic-table"),
+      "  $ " + chalk.blue("fe list basic-table userList --dir src/pages"),
       "",
     ].join("\n")
   );

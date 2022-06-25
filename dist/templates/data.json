@@ -1,32 +1,58 @@
 [
   {
-    "name": "table",
-    "description": "table列表",
+    "name": "list",
+    "description": "列表页面",
     "isGeneral": true,
     "children": [
       {
-        "name": "base-table",
-        "description": "基础table页面",
+        "name": "basic-table",
+        "description": "基础 table 页面",
         "templateFiles": [
-          "templates/table/base-table/index.hbs"
+          "templates/list/basic-table/index.hbs"
         ]
       },
       {
-        "name": "action-table",
-        "description": "action table页面",
+        "name": "edit-table",
+        "description": "可编辑 table 页面",
         "templateFiles": [
-          "templates/table/action-table/index.hbs",
-          "templates/table/action-table/index.less"
+          "templates/list/edit-table/index.hbs"
+        ]
+      },
+      {
+        "name": "sort-table",
+        "description": "可排序 table 页面",
+        "templateFiles": [
+          "templates/list/sort-table/index.hbs"
         ]
       }
     ]
   },
   {
     "name": "form",
-    "description": "基础form表单页面",
+    "description": "表单页面",
     "isGeneral": true,
-    "templateFiles": [
-      "templates/form/index.hbs"
+    "children": [
+      {
+        "name": "basic-form",
+        "description": "基础表单页面",
+        "templateFiles": [
+          "templates/form/basic-form/index.hbs"
+        ]
+      },
+      {
+        "name": "step-form",
+        "description": "分步表单页面",
+        "templateFiles": [
+          "templates/form/step-form/index.hbs"
+        ]
+      },
+      {
+        "name": "advanced-form",
+        "description": "高级表单页面",
+        "templateFiles": [
+          "templates/form/advanced-form/index.hbs"
+        ]
+      }
     ]
   },
   {

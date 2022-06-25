@@ -11,21 +11,35 @@
 
 ### 使用文档： [FECG](https://temp-static-domain.jd.com/fecg-docs)
 
-## 代码生成器：Front end code generator
+## 如何安装
 
-全局安装 [fecg](https://www.npmjs.com/package/fecg)
-
-```sh
+```bash
 npm install fecg -g
 ```
 
-OR
+## 如何使用
+下面的命令会列出目前所有可用的生成器，可以通过交互式方式来选择你使用的功能，都有详细的提示。
 
-```sh
-npm install @jd/fecg -g --registry=http://registry.m.jd.com
+```bash
+$ fe
+❯ table - table列表 
+  form - 基础form表单页面 
+  page - 空白页面 
+  api - 生成 api 文件 
+  mock - 生成单个 mock 文件 
+  openapi - 根据swagger openapi3 生成 server 
 ```
 
+你也可以通过 fe \<generatorName\> name 的形式来使用对应的生成器。 --dir 参数代表输出文件的路径
+
+```bash
+$ fe list basic-table userList --dir src/pages
+✔  ++ ./src/pages/userList/index.tsx
 ```
+
+或者使用 fe -h 查看帮助
+
+```bash
 $ fe -h
 
 Usage:
@@ -46,9 +60,9 @@ Options:
 
 Examples:
   $ fe
-  $ fe table
-  $ fe table base-table
-  $ fe table base-table userList --dir src/pages
+  $ fe list
+  $ fe list basic-table
+  $ fe list basic-table userList --dir src/pages
 ```
 
 ## 配合 vscode 插件使用：[fecg-vscode](https://marketplace.visualstudio.com/items?itemName=rumengkai.fecg)
@@ -58,7 +72,7 @@ Examples:
 ![](public/use_demo_vscode.gif)
 
 ### 配置文件，
-## 如果要使用 openapi 功能，需要在项目中增加配置文件：fecg.config.js
+## 如果要使用 openapi 功能，需要在项目根路径增加配置文件：fecg.config.js
 > fecg.config.js
 
 ```js
@@ -74,6 +88,7 @@ module.exports = {
 ```
 
 # 增加模板文件
+> 注意 src/templates/data.json 中的 name 的值需要与对应 templates 文件夹一致
 
 ### 目录结构
 
