@@ -1,11 +1,8 @@
 <h1 align="center">fecg 🚀</h1>
-<p>
-  <img alt="Version" src="https://img.shields.io/badge/version-0.0.10-blue.svg"/>
-  <img src="https://img.shields.io/badge/node-%3E%3D12.20-blue.svg" />
-  <a href="#" target="_blank">
-    <img alt="License: ISC" src="https://img.shields.io/badge/License-ISC-yellow.svg" />
-  </a>
-</p>
+
+[![npm (scoped)](https://img.shields.io/npm/v/fecg)](https://www.npmjs.com/package/fecg)
+![](https://img.shields.io/badge/node-%3E%3D12.20-blue.svg)
+![](https://img.shields.io/badge/License-ISC-yellow.svg)
 
 ![](public/use_demo.gif)
 
