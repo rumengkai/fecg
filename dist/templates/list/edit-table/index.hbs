@@ -140,7 +140,7 @@ export default () => {
         rowKey="id"
         headerTitle="可编辑表格"
         maxLength={5}
-        scroll={{
+        scroll=\{{
           x: 960,
         }}
         recordCreatorProps={
@@ -155,7 +155,7 @@ export default () => {
         toolBarRender={() => [
           <ProFormRadio.Group
             key="render"
-            fieldProps={{
+            fieldProps=\{{
               value: position,
               onChange: e => setPosition(e.target.value),
             }}
@@ -183,7 +183,7 @@ export default () => {
         })}
         value={dataSource}
         onChange={setDataSource}
-        editable={{
+        editable=\{{
           type: 'multiple',
           editableKeys,
           onSave: async (rowKey, data, row) => {
@@ -196,7 +196,7 @@ export default () => {
       <ProCard title="表格数据" headerBordered collapsible defaultCollapsed>
         <ProFormField
           ignoreFormItem
-          fieldProps={{
+          fieldProps=\{{
             style: {
               width: '100%',
             },

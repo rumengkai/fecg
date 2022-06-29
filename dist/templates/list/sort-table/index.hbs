@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { SortableContainer, SortableElement, SortableHandle } from 'react-sortable-hoc';
 import './index.less';
 
-const DragHandle = SortableHandle(() => <MenuOutlined style={{ cursor: 'grab', color: '#999' }} />);
+const DragHandle = SortableHandle(() => <MenuOutlined style=\{{ cursor: 'grab', color: '#999' }} />);
 
 const columns: ProColumns[] = [
   {
@@ -93,7 +93,7 @@ export default () => {
       rowKey="index"
       pagination={false}
       dataSource={dataSource}
-      components={{
+      components=\{{
         body: {
           wrapper: DraggableContainer,
           row: DraggableBodyRow,

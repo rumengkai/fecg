@@ -158,10 +158,10 @@ export default () => {
           params,
         });
       }}
-      editable={{
+      editable=\{{
         type: 'multiple',
       }}
-      columnsState={{
+      columnsState=\{{
         persistenceKey: 'pro-table-singe-demos',
         persistenceType: 'localStorage',
         onChange(value) {
@@ -169,10 +169,10 @@ export default () => {
         },
       }}
       rowKey="id"
-      search={{
+      search=\{{
         labelWidth: 'auto',
       }}
-      form={{
+      form=\{{
         // 由于配置了 transform，提交的参与与定义的不同这里需要转化一下
         syncToUrl: (values, type) => {
           if (type === 'get') {
@@ -184,7 +184,7 @@ export default () => {
           return values;
         },
       }}
-      pagination={{
+      pagination=\{{
         pageSize: 5,
         onChange: page => console.log(page),
       }}

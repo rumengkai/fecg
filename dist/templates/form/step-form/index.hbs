@@ -31,12 +31,12 @@ export default () => {
           await waitTime(1000);
           message.success('提交成功');
         }}
-        formProps={{
+        formProps=\{{
           validateMessages: {
             required: '此项为必填项',
           },
         }}
-        submitter={{
+        submitter=\{{
           render: props => {
             if (props.step === 0) {
               return (
