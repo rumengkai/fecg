@@ -22,7 +22,8 @@
         "name": "sort-table",
         "description": "可排序 table 页面",
         "templateFiles": [
-          "templates/list/sort-table/index.hbs"
+          "templates/list/sort-table/index.hbs",
+          "templates/list/sort-table/index.less"
         ]
       }
     ]
