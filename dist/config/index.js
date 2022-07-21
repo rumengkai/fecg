@@ -4,4 +4,4 @@ exports.TEMPLATE_REPO = exports.TEMPLATE_DEST = exports.TEMPLATE_REPO_LOCAL_PATH
 const path = require("path");
 exports.TEMPLATE_REPO_LOCAL_PATH = path.resolve(__dirname, "../../dist/repo");
 exports.TEMPLATE_DEST = path.resolve(__dirname, "../../dist/templates");
-exports.TEMPLATE_REPO = "direct:https://coding.jd.com/jd_smart_fe/fecg-templates#main";
+exports.TEMPLATE_REPO = "direct:https://github.com/rumengkai/fecg-templates#main";
