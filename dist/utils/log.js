@@ -18,6 +18,7 @@ function displayHelpScreen() {
         "  -v, --version          " + chalk_1.default.dim("Print current version"),
         "  -f, --force            " + chalk_1.default.dim("Run the generator forcefully"),
         "  -d, --dir              " + chalk_1.default.dim("Enter folder path"),
+        "  -u, --update           " + chalk_1.default.dim("Update templates"),
         "",
         chalk_1.default.dim(" ------------------------------------------------------"),
         "",

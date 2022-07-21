@@ -7,18 +7,15 @@
     "dist"
   ],
   "scripts": {
-    "dev": "npm-run-all --parallel start watch",
     "start": "tsc",
     "build": "tsc",
     "fe": "./dist/index.js",
-    "watch": "watch 'npm run copyTpl' src/templates",
     "clean": "rimraf dist/*",
-    "test": "cross-env JEST_REPORT_FILE='./test/report/test-report.json'  jest --config test/jest.conf.js",
     "prestart": "npm run clean",
     "prebuild": "npm run clean",
-    "copyTpl": "cp -r src/templates/ dist/templates",
-    "poststart": "npm run copyTpl && chmod 777 ./dist/index.js && tsc -w",
-    "postbuild": "npm run copyTpl && chmod 777 ./dist/index.js"
+    "poststart": "chmod 777 ./dist/index.js && tsc -w",
+    "postbuild": "chmod 777 ./dist/index.js",
+    "test": "cross-env JEST_REPORT_FILE='./test/report/test-report.json'  jest --config test/jest.conf.js"
   },
   "preferGlobal": true,
   "bin": {
@@ -38,9 +35,12 @@
   "author": "rumengkai1",
   "license": "ISC",
   "dependencies": {
+    "download-git-repo": "^3.0.2",
+    "fs-extra": "^10.1.0",
     "inquirer": "^7.3.3",
     "inquirer-autocomplete-prompt": "^2.0.0",
     "openapi3-ts-generator": "^1.0.1-2",
+    "ora": "4.0.5",
     "plop": "^2.7.6"
   },
   "peerDependencies": {

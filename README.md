@@ -15,16 +15,17 @@ npm install fecg -g
 ```
 
 ## 如何使用
+
 下面的命令会列出目前所有可用的生成器，可以通过交互式方式来选择你使用的功能，都有详细的提示。
 
 ```bash
 $ fe
-❯ list - 列表页面 
-  form - 表单页面 
-  page - 空白页面 
-  api - 生成 api 文件 
-  mock - 生成单个 mock 文件 
-  openapi - 根据swagger openapi3 生成 server 
+❯ list - 列表页面
+  form - 表单页面
+  page - 空白页面
+  api - 生成 api 文件
+  mock - 生成单个 mock 文件
+  openapi - 根据swagger openapi3 生成 server
 ```
 
 你也可以通过 fe \<generatorName\> name 的形式来使用对应的生成器。 --dir 参数代表输出文件的路径
@@ -69,7 +70,9 @@ Examples:
 ![](public/use_demo_vscode.gif)
 
 ### 配置文件，
+
 ## 如果要使用 openapi 功能，需要在项目根路径增加配置文件：fecg.config.js
+
 > fecg.config.js
 
 ```js
@@ -85,16 +88,22 @@ module.exports = {
 ```
 
 # 增加模板文件
-> 注意 src/templates/data.json 中的 name 的值需要与对应 templates 文件夹一致
+
+> 注意 dist/templates/data.json 中的 name 的值需要与对应 templates 文件夹一致
+
+> 注意 模板文件在模板仓库中更新：https://coding.jd.com/jd_smart_fe/fecg-templates/
+
+> 执行 `fe -u` 或者 `fe --update` 会在此项目中自动更新模板仓库至dist/templates/
 
 ### 目录结构
 
 ```
+├── dist // 公用组件
+│   └── templates // 模板文件
+│       ├── form
+│       ├── table
+│       └── data.json // plop 模板映射列表
 ├── src // 公用组件
-│   ├── templates // 模板文件
-│   │   ├── form
-│   │   ├── table
-│   │   └── data.json // plop 模板映射列表
 │   ├── plop // plop 控制器
 │   │   ├── form.ts
 │   │   └── table.ts
@@ -108,7 +117,7 @@ module.exports = {
 
 ```sh
 # 启动项目
-npm run dev
+npm run start
 # 测试指令
 npm run fe
 # 构建打包

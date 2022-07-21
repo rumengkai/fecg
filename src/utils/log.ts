@@ -16,6 +16,7 @@ export function displayHelpScreen() {
       "  -v, --version          " + chalk.dim("Print current version"),
       "  -f, --force            " + chalk.dim("Run the generator forcefully"),
       "  -d, --dir              " + chalk.dim("Enter folder path"),
+      "  -u, --update           " + chalk.dim("Update templates"),
       "",
       chalk.dim(" ------------------------------------------------------"),
       "",
