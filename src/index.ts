@@ -7,9 +7,10 @@ import { displayHelpScreen } from "./utils/log";
 import { updateTemplates } from "./utils/update";
 const args = process.argv.slice(2);
 const argv = minimist(args);
+const version = require('../package.json').version
 
 if (argv.version || argv.v) {
-  console.log(process.env.npm_package_version);
+  console.log(version);
 } else if (argv.help || argv.h) {
   displayHelpScreen(); // 输出帮助文档
 } else if (argv.update || argv.u) {
