@@ -5,6 +5,15 @@
     "isGeneral": true,
     "children": [
       {
+        "name": "basic-table-file",
+        "description": "适用于业务的模版文件",
+        "templateFiles": [
+          "templates/list/basic-table-file/list.tsx",
+          "templates/list/basic-table-file/list.module.less",
+          "templates/list/basic-table-file/__tests__/list.test.tsx"
+        ]
+      },
+      {
         "name": "basic-table",
         "description": "基础 table 页面",
         "templateFiles": [
@@ -82,6 +91,15 @@
     "isFolder": false,
     "templateFiles": [
       "templates/mock/index.ts"
+    ]
+  },
+  {
+    "name": "html",
+    "description": "生成 Vue Element UI 单个页面",
+    "isGeneral": true,
+    "isFolder": false,
+    "templateFiles": [
+      "templates/html/vue_element_ui_tpl.html"
     ]
   },
   {

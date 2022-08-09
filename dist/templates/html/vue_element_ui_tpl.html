@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://storage.jd.com/taf/static/common.css" />
+  <link rel="stylesheet" href="https://storage.jd.com/taf/static/lib/element-ui/theme-chalk/index.css" />
+  <title>Vue Element UI 单页面模板</title>
+</head>
+<script src="https://storage.jd.com/taf/static/lib/rem.js"></script>
+<script src="https://storage.jd.com/taf/static/lib/vue.min.js"></script>
+<script src="https://storage.jd.com/taf/static/lib/element-ui/index.js"></script>
+<script src="https://storage.jd.com/taf/static/lib/axios.min.js"></script>
+
+<body>
+  <div id="app">
+    <template>
+      <el-button>{{btnText}}</el-button>
+    </template>
+  </div>
+</body>
+
+<script>
+  new Vue({
+    el: "#app",
+    data() {
+      return {
+        btnText: "按钮",
+      };
+    },
+    created() { },
+    mounted() { },
+    methods: {}
+  });
+</script>
+
+</html>
