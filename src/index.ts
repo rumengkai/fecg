@@ -8,7 +8,9 @@ import { updateTemplates } from "./utils/update";
 const args = process.argv.slice(2);
 const argv = minimist(args);
 
-if (argv.help || argv.h) {
+if (argv.version || argv.v) {
+  console.log(process.env.npm_package_version);
+} else if (argv.help || argv.h) {
   displayHelpScreen(); // 输出帮助文档
 } else if (argv.update || argv.u) {
   updateTemplates(); // 更新模板库

@@ -9,7 +9,10 @@ const log_1 = require("./utils/log");
 const update_1 = require("./utils/update");
 const args = process.argv.slice(2);
 const argv = (0, minimist_1.default)(args);
-if (argv.help || argv.h) {
+if (argv.version || argv.v) {
+    console.log(process.env.npm_package_version);
+}
+else if (argv.help || argv.h) {
     (0, log_1.displayHelpScreen)(); // 输出帮助文档
 }
 else if (argv.update || argv.u) {
