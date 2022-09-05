@@ -6630,10 +6630,10 @@ onetime@^5.1.0, onetime@^5.1.2:
   dependencies:
     mimic-fn "^2.1.0"
 
-openapi3-ts-generator@1.0.7:
-  version "1.0.7"
-  resolved "https://registry.yarnpkg.com/openapi3-ts-generator/-/openapi3-ts-generator-1.0.7.tgz#b330643f51b79ef2be8146264072f2517005019c"
-  integrity sha512-0WZM3gtjfI6n14Gm00vH1x4fHjloVsLC8d6FUcBpON/7J3NIg/c4jkpoHQAdAFeyfXFUqq7B7lu7nai9QsejjQ==
+openapi3-ts-generator@1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/openapi3-ts-generator/-/openapi3-ts-generator-1.0.8.tgz#3f38f871afcfc8a2b85ce37ea0f3cce0f0666924"
+  integrity sha512-hkaWQT7svxQgPEKxBjCqVXhuJmr2/6b+coZ482ON3/xfjXKs/LExEEWxyF0SyEX7PNVrjBsTAMCmi6m8VXB6UA==
   dependencies:
     "@umijs/fabric" "^2.5.6"
     dayjs "^1.10.3"

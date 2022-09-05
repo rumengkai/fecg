@@ -39,12 +39,12 @@
     "fs-extra": "^10.1.0",
     "inquirer": "^7.3.3",
     "inquirer-autocomplete-prompt": "^2.0.0",
-    "openapi3-ts-generator": "1.0.7",
+    "openapi3-ts-generator": "1.0.8",
     "ora": "4.0.5",
     "plop": "^2.7.6"
   },
   "peerDependencies": {
-    "openapi3-ts-generator": "1.0.7",
+    "openapi3-ts-generator": "1.0.8",
     "plop": "^2.7.6"
   },
   "devDependencies": {

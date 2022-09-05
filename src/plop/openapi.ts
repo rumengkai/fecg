@@ -1,4 +1,3 @@
-import { resolve } from "path";
 import { NodePlopAPI } from "plop";
 import { cwdPath } from "../utils";
 
@@ -10,7 +9,13 @@ function openapiGenerator(_config) {
     console.log("请添加配置文件 fecg.config.js 并配置 openapi 相关信息");
     return;
   }
-  generateService(fecgConfig.openapi);
+  if (Array.isArray(fecgConfig.openapi)) {
+    fecgConfig.openapi.map((e) => {
+      generateService(e);
+    });
+  } else {
+    generateService(fecgConfig.openapi);
+  }
 }
 
 export default function (plop: NodePlopAPI) {
